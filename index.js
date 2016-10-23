@@ -7,7 +7,7 @@ const path = require('path')
 const http = require('http')
 
 const app = express()
-const port = process.env.PORT || 8080
+const port = process.env.NODE_ENV === 'production' ? 80 : 8080
 
 // to support JSON-encoded bodies
 app.use(bodyParser.json())
